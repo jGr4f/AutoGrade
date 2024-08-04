@@ -9,17 +9,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
-        <exec.mainClass>autograde.main.Main</exec.mainClass>
+        <exec.mainClass>autograde.view.main.MainView</exec.mainClass>
         
     </properties>
     <dependencies>
 
-        <!-- https://mvnrepository.com/artifact/com.miglayout/miglayout -->
-        <dependency>
-            <groupId>com.miglayout</groupId>
-            <artifactId>miglayout</artifactId>
-            <version>3.7.4</version>
-        </dependency>
+        
+        
         
         
         <dependency>
@@ -35,6 +31,13 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.33</version>
         </dependency>
+        
+        <dependency>
+            <groupId>migLayout</groupId>
+            <artifactId>migLayout</artifactId>
+            <version>4</version>
+        </dependency>
+        <!-- Gracias a mi por generar el pom-->
 
 
         

@@ -4,6 +4,7 @@
  */
 package autograde.view.component;
 
+
 import autograde.view.swingcomp.MyTextField;
 import autograde.view.swingcomp.Button;
 import autograde.view.swingcomp.MyPasswordField;
@@ -11,6 +12,7 @@ import autograde.view.swingcomp.MyPasswordField;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import net.miginfocom.swing.MigLayout;
@@ -20,13 +22,10 @@ import net.miginfocom.swing.MigLayout;
  *
  * @author juanr
  */
-public class PanelLoginRegistro extends javax.swing.JPanel {
+public class PanelLoginRegistro extends javax.swing.JLayeredPane {
     
     
 
-    /**
-     * Creates new form PanelLoginAndRegister
-     */
      public PanelLoginRegistro() {
         initComponents();
         initRegister();
@@ -42,15 +41,15 @@ public class PanelLoginRegistro extends javax.swing.JPanel {
         label.setForeground(new Color(7, 164, 121));
         register.add(label);
         MyTextField txtUser = new MyTextField();
-        
+        txtUser.setPrefixIcon(new ImageIcon(getClass().getResource("")));
         txtUser.setHint("Nombre");
         register.add(txtUser, "w 60%");
         MyTextField txtEmail = new MyTextField();
-    
+        txtEmail.setPrefixIcon(new ImageIcon(getClass().getResource("")));
         txtEmail.setHint("Email");
         register.add(txtEmail, "w 60%");
         MyPasswordField txtPass = new MyPasswordField();
-        
+        txtPass.setPrefixIcon(new ImageIcon(getClass().getResource("")));
         txtPass.setHint("Contraseña");
         register.add(txtPass, "w 60%");
         Button cmd = new Button();
@@ -67,11 +66,11 @@ public class PanelLoginRegistro extends javax.swing.JPanel {
         label.setForeground(new Color(7, 164, 121));
         login.add(label);
         MyTextField txtEmail = new MyTextField();
-        
+        txtEmail.setPrefixIcon(new ImageIcon(getClass().getResource("")));
         txtEmail.setHint("Email");
         login.add(txtEmail, "w 60%");
         MyPasswordField txtPass = new MyPasswordField();
-        
+        txtPass.setPrefixIcon(new ImageIcon(getClass().getResource("")));
         txtPass.setHint("Contraseña");
         login.add(txtPass, "w 60%");
         JButton cmdForget = new JButton("Olvidaste tu contraseña ?");
@@ -107,21 +106,10 @@ public class PanelLoginRegistro extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        register = new javax.swing.JPanel();
         login = new javax.swing.JPanel();
+        register = new javax.swing.JPanel();
 
-        register.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout registerLayout = new javax.swing.GroupLayout(register);
-        register.setLayout(registerLayout);
-        registerLayout.setHorizontalGroup(
-            registerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        registerLayout.setVerticalGroup(
-            registerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        setLayout(new java.awt.CardLayout());
 
         login.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -129,36 +117,29 @@ public class PanelLoginRegistro extends javax.swing.JPanel {
         login.setLayout(loginLayout);
         loginLayout.setHorizontalGroup(
             loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 549, Short.MAX_VALUE)
         );
         loginLayout.setVerticalGroup(
             loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 382, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE)
-                .addComponent(register, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(149, 149, 149))
+        add(login, "card3");
+
+        register.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout registerLayout = new javax.swing.GroupLayout(register);
+        register.setLayout(registerLayout);
+        registerLayout.setHorizontalGroup(
+            registerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 549, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addComponent(register, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(156, Short.MAX_VALUE))
+        registerLayout.setVerticalGroup(
+            registerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 382, Short.MAX_VALUE)
         );
+
+        add(register, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
     

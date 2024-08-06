@@ -82,7 +82,7 @@ public class PanelLoginRegistro extends javax.swing.JLayeredPane {
         Button cmd = new Button();
         cmd.setBackground(new Color(7, 164, 121));
         cmd.setForeground(new Color(250, 250, 250));
-        cmd.setText("SIGN IN");
+        cmd.setText("INICIAR SESIÓN");
         login.add(cmd, "w 40%, h 40");
     }
 
